@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens de Bicicletas Aleatórias</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        img {
+            max-width: 500px;
+            max-height: 500px;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+        }
+        .reload-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .reload-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imagem Aleatória de Bicicleta</h1>
+    <img src="{{ image_url }}" alt="Bicicleta">
+    <div>
+        <a href="{{ url_for('next_image', page=page) }}">
+            <button class="reload-button">Carregar outra imagem</button>
+        </a>
+    </div>
+</body>
+</html>
