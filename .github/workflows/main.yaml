@@ -44,6 +44,14 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
+      - name: Config AWS 
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secret.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secret.AWS_SECRET_KEY }}
+          aws-region: us-east-1
+
+
       - name: Deploy no Kubernetes
         uses: Azure/k8s-deploy@v5.0.1
         with:
