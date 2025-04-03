@@ -26,7 +26,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_LOGIN }}/bike:v1.0.${{ github.run_number }}
+            ${{ secrets.DOCKER_LOGIN }}/bike:$GITHUB_REF
             ${{ secrets.DOCKER_LOGIN }}/bike:latest
 
   CD: 
@@ -54,7 +54,7 @@ jobs:
       - name: Deploy no Kubernetes
         uses: Azure/k8s-deploy@v5.0.1
         with:
-          images: ${{ secrets.DOCKER_LOGIN }}/bike:v1.0.${{ github.run_number }}
+          images: ${{ secrets.DOCKER_LOGIN }}/bike:GITHUB_REF
           manifests: |
             kubernetes/deployment.yaml
             kubernetes/service.yaml
