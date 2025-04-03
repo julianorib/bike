@@ -42,6 +42,17 @@ aws s3 mb s3://demo-bike
 ### Definir o nome do Bucket no Backend 
 (environment/prod/backend.tfvars)
 
+- bucket
+- key (caminho para salvar o state)
+- region 
+
+### Definir as variáveis
+(environment/prod/terraform.tfvars)
+
+- project_name
+- region
+- user (usuário da conta aws)
+
 ### Executar o terraform init
 ```
 cd bike\terraform
