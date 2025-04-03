@@ -55,5 +55,6 @@ aws eks update-kubeconfig --region us-east-1 --name bike-eks-cluster
 - - DOCKER_LOGIN
 - - DOCKER_PASS
 - - KUBECONFIG
-
+- - AWS_ACCESS_KEY
+- - AWS_SECRET_KEY
 
