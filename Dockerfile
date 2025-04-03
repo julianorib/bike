@@ -17,7 +17,7 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/venv/bin:$PATH"
 
-COPY src/ .
+COPY ./src/ .
 COPY --from=builder /app/venv /venv
 
 EXPOSE 8080
