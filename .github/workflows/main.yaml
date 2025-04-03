@@ -45,7 +45,7 @@ jobs:
         uses: Azure/k8s-deploy@v5.0.1
         with:
           images: ${{ secrets.DOCKER_LOGIN }}/bike:v${{ github.run_number }}
-          manifests: 
+          manifests: |
             kubernetes/deployment.yaml
             kubernetes/service.yaml
             kubernetes/secrets.yaml
