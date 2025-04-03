@@ -95,3 +95,10 @@ kubectl get service
 ```
 
 Visualizar o IP do Loadbalance (external-ip) e abrir um navegador carregando este IP.
+
+
+## Apagar Infraestrutura 
+```
+cd terraform
+terraform destroy -var-file=environment/prod/terraform.tfvars
+```
