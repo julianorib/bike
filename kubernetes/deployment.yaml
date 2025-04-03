@@ -16,7 +16,7 @@ spec:
       serviceAccount: bike-sa
       containers:
         - name: bike
-          image: julianorib/testebike:latest
+          image: julianorib/bike:v1.X
           ports:
             - name: http-web
               containerPort: 8080 

@@ -59,3 +59,21 @@ aws eks update-kubeconfig --region us-east-1 --name bike-eks-cluster
 - - AWS_SECRET_KEY
 
 
+- Criar uma Tag para executar o CI/CD
+```
+git tag
+git tag v1.4
+git push --tags
+```
+
+- Visualizar no Cluster Kubernetes a aplicação
+```
+kubectl get pods
+```
+
+- Acessar a aplicação
+```
+kubectl get service
+```
+
+Visualizar o IP do Loadbalance
