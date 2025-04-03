@@ -4,7 +4,8 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-PEXELS_API_KEY = 'sHv0HRCPFKYrLX8beeT90zD9eRT8MhrUubw3E5N424Riamg6xFY1U7te'
+PEXELS_API_KEY = os.getenv("PEXELS_APIKEY")
+
 
 def get_random_bike_image(page):
     url = f"https://api.pexels.com/v1/search?query=bike&per_page=1&page={page}"
@@ -31,4 +32,4 @@ def next_image():
     return redirect(url_for('index', page=page))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int("8080"))

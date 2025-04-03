@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: bike
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: bike
+  template: 
+    metadata:
+      labels:
+        app: bike
+    spec: 
+      containers:
+        - name: bike
+          image: julianorib/testebike:latest
+          ports:
+            - name: http-web
+              containerPort: 8080 
+          envFrom:
+            - secretRef:
+                name: bike-secret

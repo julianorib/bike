@@ -51,3 +51,7 @@ aws eks update-kubeconfig --region us-east-1 --name bike
 ```
 
 
+- Configurar as Secrets no projeto do Github
+- - DOCKER_LOGIN
+- - DOCKER_PASS
+- - KUBECONFIG
