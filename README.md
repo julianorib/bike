@@ -22,7 +22,7 @@
 ## Como usar
 
 - Clonar este projeto
-- Exportar credenciais
+- Exportar credenciais da AWS para uso no Terraform
 ```
 export AWS_ACCESS_KEY=suachave
 export AWS_SECRET_KEY=suasenha
@@ -47,7 +47,7 @@ terraform apply -var-file=environment/prod/terraform.tfvars
 
 - Obter o kubeconfig
 ```
-aws eks update-kubeconfig --region us-east-1 --name bike
+aws eks update-kubeconfig --region us-east-1 --name bike-eks-cluster
 ```
 
 
@@ -55,3 +55,5 @@ aws eks update-kubeconfig --region us-east-1 --name bike
 - - DOCKER_LOGIN
 - - DOCKER_PASS
 - - KUBECONFIG
+
+
