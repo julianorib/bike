@@ -23,7 +23,7 @@ jobs:
       - name: Build e Push
         uses: docker/build-push-action@v6.15.0
         with: 
-          context: ./src
+          context: .
           file: ./Dockerfile
           push: true
           tags: |

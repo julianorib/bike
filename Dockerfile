@@ -7,7 +7,7 @@ ENV PATH="/app/venv/bin:$PATH"
 
 WORKDIR /app
 RUN python -m venv /app/venv
-COPY ./src/requirements.txt .
+COPY src/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org
 
 FROM cgr.dev/chainguard/python
@@ -17,7 +17,7 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/venv/bin:$PATH"
 
-COPY ./src/ .
+COPY src/ .
 COPY --from=builder /app/venv /venv
 
 EXPOSE 8080
